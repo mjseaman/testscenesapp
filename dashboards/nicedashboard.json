@@ -1,0 +1,957 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 3201,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "grafana-dynatrace-datasource",
+          "uid": "TkQYCC54k"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 5,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "frameIndex": 0,
+          "showHeader": true
+        },
+        "pluginVersion": "11.4.0-77868",
+        "targets": [
+          {
+            "active": "rawurl",
+            "datasource": {
+              "type": "grafana-dynatrace-datasource",
+              "uid": "TkQYCC54k"
+            },
+            "metric": {
+              "aggregations": [],
+              "alias": "",
+              "cleanSelector": "",
+              "displayName": "",
+              "filters": {
+                "conjunction": "AND",
+                "filters": []
+              },
+              "name": "Select...",
+              "selector": "",
+              "transformations": [
+                {
+                  "name": "names",
+                  "params": []
+                }
+              ],
+              "zones": []
+            },
+            "mode": "builder",
+            "rawUrl": {
+              "fields": [
+                {
+                  "alias": "ts",
+                  "path": "$.result[*].data[*].timestamps[*]",
+                  "type": "time"
+                },
+                {
+                  "alias": "values",
+                  "path": "$.result[*].data[*].values[*]",
+                  "type": "number"
+                }
+              ],
+              "parseIndividualFields": true,
+              "text": "v2/metrics/query?metricSelector=builtin:host.cpu.(usage,idle):filter(or(eq(\"dt.entity.host\",\"HOST-6C561F3970080580\"),eq(\"dt.entity.host\",\"HOST-E75A8A7039B55BEB\")))&from=now-5m"
+            },
+            "refId": "A",
+            "version": "3.9.1"
+          },
+          {
+            "active": "rawurl",
+            "datasource": {
+              "type": "grafana-dynatrace-datasource",
+              "uid": "TkQYCC54k"
+            },
+            "hide": false,
+            "metric": {
+              "aggregations": [],
+              "alias": "",
+              "cleanSelector": "",
+              "displayName": "",
+              "filters": {
+                "conjunction": "AND",
+                "filters": []
+              },
+              "name": "Select...",
+              "selector": "",
+              "transformations": [
+                {
+                  "name": "names",
+                  "params": []
+                }
+              ],
+              "zones": []
+            },
+            "mode": "builder",
+            "rawUrl": {
+              "fields": [
+                {
+                  "alias": "hostName",
+                  "path": "$.result[*].data[*].dimensions[0]",
+                  "type": "auto"
+                }
+              ],
+              "parseIndividualFields": true,
+              "text": "v2/metrics/query?metricSelector=builtin:host.cpu.(usage,idle):filter(or(eq(\"dt.entity.host\",\"HOST-6C561F3970080580\"),eq(\"dt.entity.host\",\"HOST-E75A8A7039B55BEB\")))&from=now-5m"
+            },
+            "refId": "B",
+            "version": "3.9.1"
+          }
+        ],
+        "title": "Panel Title",
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "grafana-dynatrace-datasource",
+          "uid": "TkQYCC54k"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "bars",
+              "fillOpacity": 50,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0-77868",
+        "targets": [
+          {
+            "active": "metric",
+            "datasource": {
+              "type": "grafana-dynatrace-datasource",
+              "uid": "TkQYCC54k"
+            },
+            "metric": {
+              "aggregations": [
+                {
+                  "name": "max",
+                  "params": []
+                }
+              ],
+              "alias": "",
+              "cleanSelector": "",
+              "displayName": "CPU time",
+              "filters": {
+                "conjunction": "AND",
+                "filters": []
+              },
+              "name": "builtin:service.cpu.perRequest",
+              "selector": "",
+              "transformations": [
+                {
+                  "name": "names",
+                  "params": []
+                }
+              ]
+            },
+            "mode": "builder",
+            "refId": "A",
+            "version": "3.5.2"
+          }
+        ],
+        "timeFrom": "1h",
+        "title": "Max CPU by Service",
+        "transformations": [
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": ".*dt\\.entity\\.service\\.name=(.+)}.*",
+              "renamePattern": "$1"
+            }
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "grafana-dynatrace-datasource",
+          "uid": "TkQYCC54k"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Service Name"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 294
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 9,
+          "x": 1,
+          "y": 8
+        },
+        "id": 6,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "11.4.0-77868",
+        "targets": [
+          {
+            "active": "rawurl",
+            "datasource": {
+              "type": "grafana-dynatrace-datasource",
+              "uid": "TkQYCC54k"
+            },
+            "metric": {
+              "aggregations": [],
+              "alias": "",
+              "cleanSelector": "",
+              "displayName": "",
+              "filters": {
+                "conjunction": "AND",
+                "filters": []
+              },
+              "name": "Select...",
+              "selector": "",
+              "transformations": [
+                {
+                  "name": "names",
+                  "params": []
+                }
+              ]
+            },
+            "mode": "builder",
+            "rawUrl": {
+              "fields": [
+                {
+                  "alias": "Host Name",
+                  "path": "$.entities[*].entityId",
+                  "type": "auto"
+                },
+                {
+                  "alias": "Description",
+                  "path": "$.entities[*].displayName",
+                  "type": "auto"
+                }
+              ],
+              "parseIndividualFields": true,
+              "text": "v2/entities?entitySelector=type(\"HOST\")"
+            },
+            "refId": "A",
+            "version": "3.5.2"
+          }
+        ],
+        "title": "List of hosts",
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "grafana-dynatrace-datasource",
+          "uid": "TkQYCC54k"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Service Name"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 294
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 9,
+          "x": 12,
+          "y": 8
+        },
+        "id": 1,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "11.4.0-77868",
+        "targets": [
+          {
+            "active": "rawurl",
+            "datasource": {
+              "type": "grafana-dynatrace-datasource",
+              "uid": "TkQYCC54k"
+            },
+            "metric": {
+              "aggregations": [],
+              "alias": "",
+              "cleanSelector": "",
+              "displayName": "",
+              "filters": {
+                "conjunction": "AND",
+                "filters": []
+              },
+              "name": "Select...",
+              "selector": "",
+              "transformations": [
+                {
+                  "name": "names",
+                  "params": []
+                }
+              ]
+            },
+            "mode": "builder",
+            "rawUrl": {
+              "fields": [
+                {
+                  "alias": "Service Name",
+                  "path": "$.entities[*].entityId",
+                  "type": "auto"
+                },
+                {
+                  "alias": "Description",
+                  "path": "$.entities[*].displayName",
+                  "type": "auto"
+                }
+              ],
+              "parseIndividualFields": true,
+              "text": "v2/entities?entitySelector=type(\"SERVICE\")"
+            },
+            "refId": "A",
+            "version": "3.5.2"
+          }
+        ],
+        "title": "List of services",
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "grafana-dynatrace-datasource",
+          "uid": "TkQYCC54k"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 13,
+          "w": 12,
+          "x": 0,
+          "y": 18
+        },
+        "id": 2,
+        "options": {
+          "infinitePan": false,
+          "inlineEditing": false,
+          "panZoom": false,
+          "root": {
+            "background": {
+              "color": {
+                "fixed": "transparent"
+              }
+            },
+            "border": {
+              "color": {
+                "fixed": "dark-green"
+              }
+            },
+            "constraint": {
+              "horizontal": "left",
+              "vertical": "top"
+            },
+            "elements": [
+              {
+                "background": {
+                  "color": {
+                    "fixed": "#D9D9D9"
+                  }
+                },
+                "border": {
+                  "color": {
+                    "fixed": "dark-green"
+                  }
+                },
+                "config": {
+                  "align": "left",
+                  "color": {
+                    "fixed": "#000000"
+                  },
+                  "size": 20,
+                  "text": {
+                    "field": "$.properties.detectedName",
+                    "fixed": "",
+                    "mode": "field"
+                  },
+                  "valign": "top"
+                },
+                "constraint": {
+                  "horizontal": "left",
+                  "vertical": "top"
+                },
+                "name": "serviceDescValue",
+                "oneClickMode": "off",
+                "placement": {
+                  "height": 100.99609375,
+                  "left": 286,
+                  "top": 244,
+                  "width": 395
+                },
+                "type": "metric-value"
+              },
+              {
+                "background": {
+                  "color": {
+                    "fixed": "transparent"
+                  }
+                },
+                "border": {
+                  "color": {
+                    "fixed": "dark-green"
+                  }
+                },
+                "config": {
+                  "align": "right",
+                  "color": {
+                    "fixed": "rgb(204, 204, 220)"
+                  },
+                  "size": 16,
+                  "text": {
+                    "fixed": "Description:"
+                  },
+                  "valign": "middle"
+                },
+                "constraint": {
+                  "horizontal": "left",
+                  "vertical": "top"
+                },
+                "name": "serviceDescLabel",
+                "oneClickMode": "off",
+                "placement": {
+                  "height": 50,
+                  "left": 144,
+                  "top": 229,
+                  "width": 122.98828125
+                },
+                "type": "text"
+              },
+              {
+                "background": {
+                  "color": {
+                    "fixed": "transparent"
+                  }
+                },
+                "border": {
+                  "color": {
+                    "fixed": "dark-green"
+                  }
+                },
+                "config": {
+                  "align": "left",
+                  "color": {
+                    "fixed": "text"
+                  },
+                  "size": 18,
+                  "text": {
+                    "field": "$.properties.serviceType",
+                    "fixed": "",
+                    "mode": "field"
+                  },
+                  "valign": "middle"
+                },
+                "constraint": {
+                  "horizontal": "left",
+                  "vertical": "top"
+                },
+                "name": "serviceTypeValue",
+                "oneClickMode": "off",
+                "placement": {
+                  "height": 99.99998474121094,
+                  "left": 284,
+                  "top": 139,
+                  "width": 316.9921875
+                },
+                "type": "metric-value"
+              },
+              {
+                "background": {
+                  "color": {
+                    "fixed": "transparent"
+                  }
+                },
+                "border": {
+                  "color": {
+                    "fixed": "dark-green"
+                  }
+                },
+                "config": {
+                  "align": "right",
+                  "color": {
+                    "fixed": "rgb(204, 204, 220)"
+                  },
+                  "size": 16,
+                  "text": {
+                    "fixed": "Type:"
+                  },
+                  "valign": "middle"
+                },
+                "constraint": {
+                  "horizontal": "left",
+                  "vertical": "top"
+                },
+                "name": "serviceTypeLabel",
+                "oneClickMode": "off",
+                "placement": {
+                  "height": 50,
+                  "left": 118,
+                  "top": 162,
+                  "width": 145.99609375
+                },
+                "type": "text"
+              },
+              {
+                "background": {
+                  "color": {
+                    "fixed": "#D9D9D9"
+                  }
+                },
+                "border": {
+                  "color": {
+                    "fixed": "dark-green"
+                  }
+                },
+                "config": {
+                  "align": "center",
+                  "color": {
+                    "fixed": "#000000"
+                  },
+                  "size": 20,
+                  "text": {
+                    "field": "$.entityId",
+                    "fixed": "",
+                    "mode": "field"
+                  },
+                  "valign": "middle"
+                },
+                "constraint": {
+                  "horizontal": "left",
+                  "vertical": "top"
+                },
+                "name": "serviceName",
+                "oneClickMode": "off",
+                "placement": {
+                  "height": 61.9921875,
+                  "left": 79,
+                  "top": 63,
+                  "width": 348.984375
+                },
+                "type": "metric-value"
+              }
+            ],
+            "name": "Element 1681743657605",
+            "oneClickMode": "off",
+            "placement": {
+              "height": 100,
+              "left": 0,
+              "top": 0,
+              "width": 100
+            },
+            "type": "frame"
+          },
+          "showAdvancedTypes": true
+        },
+        "pluginVersion": "11.4.0-77868",
+        "targets": [
+          {
+            "active": "rawurl",
+            "datasource": {
+              "type": "grafana-dynatrace-datasource",
+              "uid": "TkQYCC54k"
+            },
+            "metric": {
+              "aggregations": [],
+              "alias": "",
+              "cleanSelector": "",
+              "displayName": "",
+              "filters": {
+                "conjunction": "AND",
+                "filters": []
+              },
+              "name": "Select...",
+              "selector": "",
+              "transformations": [
+                {
+                  "name": "names",
+                  "params": []
+                }
+              ]
+            },
+            "mode": "builder",
+            "rawUrl": {
+              "fields": [
+                {
+                  "alias": "",
+                  "path": "",
+                  "type": "auto"
+                }
+              ],
+              "parseIndividualFields": false,
+              "text": "v2/entities/$services"
+            },
+            "refId": "A",
+            "version": "3.5.2"
+          }
+        ],
+        "title": "",
+        "type": "canvas"
+      }
+    ],
+    "preload": false,
+    "refresh": "",
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "text": "SERVICE-E56A7C443E8D3ED8",
+            "value": "SERVICE-E56A7C443E8D3ED8"
+          },
+          "datasource": {
+            "type": "grafana-dynatrace-datasource",
+            "uid": "TkQYCC54k"
+          },
+          "definition": "",
+          "includeAll": false,
+          "name": "services",
+          "options": [],
+          "query": {
+            "query": {
+              "active": "rawurl",
+              "metric": {
+                "aggregations": [],
+                "alias": "",
+                "cleanSelector": "",
+                "displayName": "",
+                "filters": {
+                  "conjunction": "AND",
+                  "filters": []
+                },
+                "name": "Select...",
+                "selector": "",
+                "transformations": [
+                  {
+                    "name": "names",
+                    "params": []
+                  }
+                ]
+              },
+              "mode": "builder",
+              "rawUrl": {
+                "fields": [
+                  {
+                    "alias": "serviceId",
+                    "path": "$.entities[*].entityId",
+                    "type": "auto"
+                  }
+                ],
+                "parseIndividualFields": true,
+                "text": "v2/entities?entitySelector=type(\"SERVICE\")"
+              },
+              "refId": "VariableQueryEditor",
+              "version": "3.5.2"
+            },
+            "queryType": "custom",
+            "queryable": true
+          },
+          "refresh": 1,
+          "regex": "",
+          "type": "query"
+        },
+        {
+          "current": {
+            "text": "HOST-6C561F3970080580",
+            "value": "HOST-6C561F3970080580"
+          },
+          "datasource": {
+            "type": "grafana-dynatrace-datasource",
+            "uid": "TkQYCC54k"
+          },
+          "definition": "",
+          "includeAll": false,
+          "name": "hosts",
+          "options": [],
+          "query": {
+            "query": {
+              "active": "rawurl",
+              "metric": {
+                "aggregations": [],
+                "alias": "",
+                "cleanSelector": "",
+                "displayName": "",
+                "filters": {
+                  "conjunction": "AND",
+                  "filters": []
+                },
+                "name": "Select...",
+                "selector": "",
+                "transformations": [
+                  {
+                    "name": "names",
+                    "params": []
+                  }
+                ],
+                "zones": []
+              },
+              "mode": "builder",
+              "rawUrl": {
+                "fields": [
+                  {
+                    "alias": "hostId",
+                    "path": "$.entities[*].entityId",
+                    "type": "auto"
+                  }
+                ],
+                "parseIndividualFields": true,
+                "text": "v2/entities?entitySelector=type(\"HOST\")"
+              },
+              "refId": "VariableQueryEditor",
+              "version": "3.9.1"
+            },
+            "queryType": "custom",
+            "queryable": false,
+            "staticLabel": "Query Editor"
+          },
+          "refresh": 1,
+          "regex": "",
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Dynatrace tests",
+    "uid": "e42cccda-c7c2-428d-8a57-35824398e391",
+    "version": 11,
+    "weekStart": ""
+  }
